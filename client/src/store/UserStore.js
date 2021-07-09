@@ -11,7 +11,14 @@ export default class UserStore {
         this._isAuth = bool
     }
 
-    setUser(bool){
-        this.user = bool
+    setUser(user){
+        this.user = user
+    }
+    get isAuth(){
+        return this._isAuth
+    }
+
+    get user(){
+        return this._user
     }
 }
