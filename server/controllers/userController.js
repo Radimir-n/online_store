@@ -18,6 +18,7 @@ class UserController {
             return next(ApiError.badRequest('Неккоректный email или пароль'))
         }
         const candidate = await User.findOne({where:{email}})
+        console.log(candidate)
         if(candidate){
             return next(ApiError.badRequest('Пользователь с таким email уже существует'))
         }

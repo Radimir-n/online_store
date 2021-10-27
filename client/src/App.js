@@ -8,13 +8,12 @@ import NavBar from "./components/NavBar";
 import { check } from "./http/userApi";
 
 const App = observer(() => {
-  const {user} =useContext(Context)
+  const {user} = useContext(Context)
   const [loading, setLoading] = useState(true)
 
   useEffect(()=>{
     check().then(data =>{
-      console.log(data)
-      user.setUser(true)
+      user.setUser(data)
       user.setIsAuth(true)
     }).finally( () => setLoading(false))
   }, [])
